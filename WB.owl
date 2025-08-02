@@ -1,0 +1,137 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ed: <http://example.org/entity/> .
+@prefix ep: <http://example.org/prop/> .
+@prefix eps: <http://example.org/prop/statement/> .
+@prefix epq: <http://example.org/prop/qualifier/> .
+@prefix epr: <http://example.org/prop/reference/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix edt: <http://example.org/prop/direct/> .
+
+
+### Core Classes
+ed:Q410 a owl:Class ; rdfs:label "Person" .
+ed:Q412 a owl:Class ; rdfs:label "AgeCategory" .
+ed:Q424 a owl:Class ; rdfs:label "AgeRecord" .
+ed:Q238 a owl:Class ; rdfs:label "Event" .
+ed:Q67 a owl:Class ; rdfs:label "EntityWithProvenance" .
+ed:Q291 a owl:Class ; rdfs:label "Sex" .
+ed:Q375 a owl:Class ; rdfs:label "PersonStatus" .
+ed:Q316 a owl:Class ; rdfs:label "RoleinaLifeEvent" .
+ed:Q108 a owl:Class ; rdfs:label "Occupation" .
+ed:Q463 a owl:Class ; rdfs:label "InteragentRelationship" .
+ed:Q298 a owl:Class ; rdfs:label "EthnolinguisticDescriptor" .
+ed:Q301 a owl:Class ; rdfs:label "Place" .
+ed:Q303403 a owl:Class ; rdfs:label "PlaceName" .
+ed:Q205 a owl:Class ; rdfs:label "PlaceTypeVocabulary" .
+ed:Q172 a owl:Class ; rdfs:label "ResearchProject" .
+ed:Q282 a owl:Class ; rdfs:label "EventType" .
+ed:Q433 a owl:Class ; rdfs:label "LicenseInformation" .
+ed:Q122 a owl:Class ; rdfs:label "DocumentType" .
+
+### Statement & Reference
+wikibase:Statement a owl:Class ; rdfs:label "Wikibase Statement" .
+wikibase:Reference a owl:Class ; rdfs:label "Reference" .
+
+
+### Properties
+
+
+
+epq:P18 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q238 ; rdfs:label "recordedAt" .
+
+prov:wasDerivedFrom a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range wikibase:Reference ; rdfs:label "wasDerivedFrom" .
+epr:P6 a owl:ObjectProperty ; rdfs:domain wikibase:Reference ; rdfs:range ed:Q67 ; rdfs:label "isDirectlyBasedOn" .
+epr:P21 a owl:DatatypeProperty ; rdfs:domain wikibase:Reference ; rdfs:range xsd:string ; rdfs:label "hasExternalReference" .
+
+
+### Rules (AgeRecord)
+
+ep:P42 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasAgeRecord" .
+eps:P42 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q424 ; rdfs:label "age value" .
+edt:P3 a owl:DatatypeProperty ; rdfs:domain ed:Q424 ; rdfs:range xsd:double ; rdfs:label "hasAgeValue" .
+edt:P4 a owl:ObjectProperty ; rdfs:domain ed:Q424 ; rdfs:range ed:Q412 ; rdfs:label "hasAgeCategory" .
+
+
+
+#Rules (SexRecord)
+
+
+ep:P31 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasSex" .
+eps:P31 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q291 ; rdfs:label "sex value" .
+
+#Rules(PersonStatusRecord)
+
+
+ep:P33 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasPersonStatus" .
+eps:P33 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q375 ; rdfs:label "person status value" .
+epq:P34 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q238 ; rdfs:label "hasStatusGeneratingEvent" .
+
+# Rules( Participant Role)
+ep:P17 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasParticipantRole" .
+eps:P17 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q316 ; rdfs:label "participant role type" .
+epq:P19 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q238 ; rdfs:label "roleProvidedBy" .
+
+#Rules (OccupationRecord)
+ep:P22 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasOccupation" .
+eps:P22 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q108 ; rdfs:label "occupation value" .
+
+#Rules(RaceRecord)
+ep:P32 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasRaceOrColor" .
+eps:P32 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "race as text" .
+
+#Rules(InterAgentRelationshipRecord)
+ep:P39 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasInterAgentRelationship" .
+eps:P39 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q463 ; rdfs:label "relationship type" .
+epq:P40 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q410 ; rdfs:label "isRelationshipTo" .
+
+#Rules(OriginRecord)
+ep:P46 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasEthnolinguisticDescriptor" .
+eps:P46 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q298 ; rdfs:label "ethnolinguistic value" .
+epq:P47 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q301 ; rdfs:label "refersToPlaceOfOrigin" .
+
+### Rules(NameRecord)
+
+
+ep:P20 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement  ; rdfs:label "hasName" .
+eps:P20 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "full name as string" .
+ep:P71 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasAlternateName" .
+eps:P71 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "alternate name string" .
+ep:P72 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasSurname" .
+eps:P72 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "surname as string" .
+ep:P73 a owl:ObjectProperty ; rdfs:domain ed:Q410 ; rdfs:range wikibase:Statement ; rdfs:label "hasFirstName" .
+eps:P73 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "first name as string" .
+
+
+
+#Rules(Event)
+ep:P27 a owl:ObjectProperty ; rdfs:domain ed:Q238 ; rdfs:range wikibase:Statement ; rdfs:label "atPlace" .
+eps:P27 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q301 ; rdfs:label "place value" .
+ep:P30 a owl:ObjectProperty ; rdfs:domain ed:Q238 ; rdfs:range wikibase:Statement ; rdfs:label "hasEventType" .
+eps:P30 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q282 ; rdfs:range ed:Q282 .
+ep:P28 a owl:ObjectProperty ; rdfs:domain ed:Q238 ; rdfs:range wikibase:Statement ; rdfs:label "date" .
+eps:P28 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "date value" .
+
+#Rules(Place)
+ep:P8 a owl:ObjectProperty ; rdfs:domain ed:Q301 ; rdfs:range wikibase:Statement ; rdfs:label "hasPlaceType" .
+eps:P8 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q205 ; rdfs:label "place type value" .
+ep:P59 a owl:ObjectProperty ; rdfs:domain ed:Q301 ; rdfs:range wikibase:Statement ; rdfs:label "hasCoordinates" .
+eps:P59 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "coordinate value" .
+
+
+#Rules(Provenance)
+ep:P25 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "reportsOn" .
+eps:P25 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q238 ; rdfs:label "reported event" .
+ep:P16 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "generatedBy" .
+eps:P16 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q172 ; rdfs:label "research project value" .
+ep:P15 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "hasLicenseInfo" .
+eps:P15 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q433 ; rdfs:label "license info value" .
+ep:P26 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "availableFrom" .
+eps:P26 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "availability value" .
+ep:P23 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "hasOriginalSourceType" .
+eps:P23 a owl:ObjectProperty ; rdfs:domain wikibase:Statement ; rdfs:range ed:Q122 ; rdfs:label "source type value" .
+ep:P63 a owl:ObjectProperty ; rdfs:domain ed:Q67 ; rdfs:range wikibase:Statement ; rdfs:label "endsAt" .
+eps:P63 a owl:DatatypeProperty ; rdfs:domain wikibase:Statement ; rdfs:range xsd:string ; rdfs:label "end date value" .

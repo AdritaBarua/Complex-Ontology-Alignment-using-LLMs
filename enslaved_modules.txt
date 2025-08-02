@@ -1,0 +1,162 @@
+Modules:
+
+Agent and Person
+Agents are either persons or organizations. We use an Agent module, with Person as a subclass of Agent. If certain records apply to persons only, and not to agents in general, we declare this using appropriate axioms; see Axioms below.
+Agents may have descriptions and external references as described in the respective module descriptions. Central for the Enslaved Ontology are the agent records associated with agents, this module is also described in detail further below.
+Axioms:
+	      Person ⊑ Agent	(1)
+	Organization ⊑ Agent	(2)
+    ∃hasAgentRecord.⊤⊑ Agent 	(3)
+	Agent ⊑≥0hasExternalReference.ExternalReference	(4)
+	Agent ⊑≥0hasDescriptionText.Description	(5)
+	Agent ⊑≥0hasAgentRecord.AgentRecord	(6)
+      ¬Person ⊑¬∀hasAgentRecord.(OriginRecord ⊔ RaceRecord ⊔ AgeRecord ⊔ 
+SexRecord ⊔ OccupationRecord ⊔ PersonStatusRecord)		(7)
+
+AgeRecord
+Axioms:
+	AgeRecord ⊑ AgentRecord	(1)
+	AgeRecord ⊑≤1hasValue.AgeCategory	(2)
+	AgeRecord ⊑≤1hasAgeValue.xsd:double	(3)
+	AgeRecord ⊑∃hasValue.AgeCategory ⊔∃hasAgeValue.xsd:double (4)
+	hasAgeRecord ⊑ hasPersonRecord	(5)
+
+SexRecord
+Axioms:
+	SexRecord ⊑ AgentRecord	(1)
+	SexRecord ⊑ =1hasValue.SexTypes	(2)
+	hasSexRecord ⊑ hasPersonRecord	(3)
+
+NameRecord
+Axioms:
+   	NameRecord ⊑ AgentRecord(1)
+   	⊤⊑∀hasNameVariant.NameVariant(2)
+   	hasPreferredNameVariant ⊑ hasNameVariant(3)
+   	NameRecord ⊑≤1hasPreferredNameVariant.NameVariant(4)
+   	NameRecord ⊑∃hasNameVariant.NameVariant(5) NameVariant ⊑ =1fullNameAsString.xsd:string (6)
+   	NameVariant ⊑≤1hasFirstnameAsString.xsd:string(7)
+   	NameVariant ⊑≤1hasSurnameAsString.xsd:string   (8) 
+   	⊤⊑∀fullNameAsString.xsd:string   (9)
+   	⊤⊑∀hasFirstNameAsString.xsd:string  (10)
+   	⊤⊑∀hasSurnameAsString.xsd:string(11) 
+   	hasNameRecord ⊑ hasAgentRecord(12) 
+
+PersonStatusRecord
+Axioms:
+	PersonStatusRecord ⊑ AgentRecord	(1)
+	PersonStatusRecord ⊑ =1hasValue.PSCategories	(2)
+	hasPersonStatusRecord ⊑ hasPersonRecord	(3)
+	PersonStatusRecord ⊑∀hasStatusGeneratedEvent.Event	(4)
+	∃hasStatusGeneratedEvent.Event ⊑ PersonStatusRecord	(5)
+	hasStatusGeneratedEvent ⊑ refersToEvent	(6)
+
+ParticipantRoleRecord
+Axioms:
+	ParticipantRoleRecord ⊑ AgentRecord	(1)
+	ParticipantRoleRecord ⊑ =1providesParticipantRole−.Event (2)
+	⊤⊑∀providesParticipantRole.ParticipantRoleRecord	(3)
+	ParticipantRoleRecord ⊑≤1hasParticipantRoleType.ParticipantRoleTypes	(4)
+	∃hasParticipantRoleType.ParticipantRoleType ⊑ ParticipantRoleRecord	(5)
+	ParticipantRoleRecord ⊑∀hasParticipantRoleType.ParticipantRoleType	(6)
+	hasParticipantRoleRecord ⊑ hasAgentRecord	(7)
+	roleProvidedBy ⊑ hasParticipantRoleRecord−	(8)
+
+OccupationRecord
+Axioms:
+	OccupationRecord ⊑ AgentRecord	(1)
+	OccupationRecord ⊑ =1hasValue.Occupations (2)
+	hasOccupationRecord ⊑ hasPersonRecord	(3)
+
+RaceRecord
+Axioms:
+	RaceRecord ⊑ AgentRecord	(1)
+	RaceRecord ⊑≤1asText.xsd:string (2)
+	hasRaceRecord ⊑ hasPersonRecord	(3)
+
+OriginRecord
+Axioms:
+	OriginRecord ⊑ AgentRecord	(1)
+	OriginRecord ⊑≤1hasECVO.ECVO	(2)
+	OriginRecord ⊑∃refersToPlaceOfOrigin.Place ⊔∃hasECVO.ECVO	(3)
+	OriginRecord ⊑∀refersToPlaceOfOrigin.Place	(4)
+	OriginRecord ⊑∀hasECVO.ECVO	(5)
+	hasOriginRecord ⊑ hasPersonRecord	(6)
+
+ResearchProject
+Axioms:
+	ResearchProject ⊑ Event	(1)
+	ResearchProject ⊑ ProvenanceActivity	(2)
+	ResearchProjectPIRole ⊑∀providesParticipantRole−.ResearchProject	(3)
+	ResearchProjectContributorRole ⊑∀providesParticipantRole−.ResearchProject	(4)
+	ResearchProjectPIRole ⊑ Researcher	(5)
+	ResearchProjectContributorRole ⊑ Researcher	(6)
+
+Place
+Axioms:
+	Place ⊑ =1hasName.xsd:string	(1)
+	PlaceCV ⊑ =1hasName.xsd:string	(2)
+	Place ⊑≥0hasAlternateName.xsd:string	(3)
+	PlaceCV ⊑≥0hasAlternateName.xsd:string	(4)
+	⊤⊑∀hasName.xsd:string	(5)
+	⊤⊑∀hasAlternateName.xsd:string	(6)
+	⊤⊑∀hasSpatialExtent.SpatialExtent	(7)
+	Place ⊑≤1hasSpatialExtent.SpatialExtent	(8)
+	⊤⊑∀hasTemporalExtent.TemporalExtent	(9)
+	Place ⊑≤1hasTemporalExtent.TemporalExtent	(10)
+	Place ⊑ EntityWithProvenance	(11)
+	Place ⊑≥0hasDescription.Description	(12)
+	PlaceCV ⊑≥0hasDescription.Description	(13)
+	Place ⊑≤1hasPlaceTypeCV.PlaceTypeCV	(14)
+	PlaceCV ⊑≤1hasPlaceTypeCV.PlaceTypeCV	(15)
+	Place ⊑≥0hasBroader.PlaceCV	(16)
+	Place ⊑≥0isSpatiallyLocatedIn.PlaceCV	(17)
+	Place ⊑≥0isAdministrativePartOf.PlaceCV	(18)
+	PlaceCV ⊑≥0hasBroader.PlaceCV	(19)
+	PlaceCV ⊑≥0isSpatiallyLocatedIn.PlaceCV	(20)
+	PlaceCV ⊑≥0isAdministrativePartOf.PlaceCV	(21)
+	Coordinates ⊑ SpatialExtent	(22)
+	hasCoordinates ⊑ hasSpatialExtent	(23)
+	⊤⊑∀hasCoordinates.Coordinates	(24)
+	⊤⊑∀hasLongitude.xsd:double	(26)
+	Coordinates ⊑ =1hasLatitude.xsd:double	(27)
+	Coordinates ⊑ =1hasLongitude.xsd:double	(28)
+
+Event
+Axioms:
+	Event ⊑≥1hasName.xsd:string             (1)
+	Event ⊑≥0hasDescriptionText.Description	(2)
+	Event ⊑≥1hasExternalReference.ExternalReference  (3)
+	Event ⊑∃atPlace.Place                      (4)
+	Event ⊑≥1providesParticipantRole.ParticipantRoleRecord  (5)
+	Event ⊑ =1hasTemporalExtent.TemporalExtent     	(6)
+	⊤⊑∀atPlace.Place            (7)
+        ⊤⊑∀hasName.xsd:string	(8)
+        ∃subEventOf.Event ⊑ Event	(9)
+        ⊤⊑∀subEventOf.Event 	(10)
+        Event ⊑ =1hasEventType.EventTypes	(11)
+        ∃hasEventType.EventTypes ⊑ Event	(12)
+        Event ⊑∀hasEventType.EventTypes	(13)
+        AgentRecord(x)∧ recordedAt(x,y)∧ Event(y) → reportsOn(x,y)	(14)
+        EntityWithProvenance ⊑≥0reportsOn.Event	(15)
+        ⊤⊑∀refersToEvent.Event	(16)
+
+EntityWithProvenance
+Axioms:
+	EntityWithProvenance ⊑∃availableFrom.xsd:string           (1)
+	EntityWithProvenance ⊑≥0hasReferenceURI.xsd:anyURI        (2)                            
+ 	EntityWithProvenance ⊑∃hasLicenseInformation.LicenseInformation.     (3)
+   	EntityWithProvenance ⊑∀availableFrom.xsd:string			(4)
+   	EntityWithProvenance ⊑∀hasLicenseInformation.LicenseInformation     (5)
+   	EntityWithProvenance ⊑∀hasOriginalSourceType.DocumentTypes.          (6)	                	              
+	∃hasOriginalSourceType.DocumentTypes ⊑ EntityWithProvenance          (7)                                              
+        EntityWithProvenance ⊑∀isDirectlyBasedOn.EntityWithProvenance        (8)	
+	∃attributedTo.Agent ⊑ EntityWithProvenance	(9)	
+	EntityWithProvenance ⊑∀attributedTo.Agent	(10)   
+	∃generatedBy.ProvenanceActivity ⊑ EntityWithProvenance	(11)
+	EntityWithProvenance ⊑∀generatedBy.ProvenanceActivity	(12)
+	∃used.EntityWithProvenance ⊑ ProvenanceActivity	(13)
+	ProvenanceActivity ⊑∀used.EntityWithProvenance	(14)
+	∃performedBy.Agent ⊑ ProvenanceActivity	(15)
+	ProvenanceActivity ⊑∀performedBy.Agent	(16)
+	isDirectlyBasedOn ◦ hasOriginalSourceType ⊑ hasOriginalSourceType	(17)
+	isDirectlyBasedOn−◦ hasOriginalSourceType ⊑ hasOriginalSourceType	(18)
