@@ -1,1 +1,1 @@
-Complex Ontology Allignment for Enslaved to Wikibase Entities
+Complex Ontology Allignment for Wikibase to Enslaved Entities. 
