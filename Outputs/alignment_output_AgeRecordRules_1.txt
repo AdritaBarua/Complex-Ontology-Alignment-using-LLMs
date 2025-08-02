@@ -1,0 +1,23 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in both ontologies. The provided Wikibase triple indicates that `Q410` is a class labeled "Person". In the Enslaved ontology, the concept of "Person" is defined as a subclass of "Agent". 
+
+Based on the information provided in the Enslaved ontology, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Wikibase: `http://example.org/entity/Q410` (rdf:type owl:Class ; rdfs:label "Person")
+   - Enslaved: `Person`
+   - Alignment Rule: `http://example.org/entity/Q410 ≡ Person`
+
+2. **Subclass Alignment:**
+   - Since `Person` is a subclass of `Agent` in the Enslaved ontology, we can infer:
+   - Alignment Rule: `http://example.org/entity/Q410 ⊑ Agent`
+
+3. **Property Alignment:**
+   - If there are properties associated with `Person` in the Wikibase ontology, they should be aligned with properties applicable to `Person` in the Enslaved ontology, such as `hasAgentRecord`, `hasExternalReference`, and `hasDescriptionText`.
+
+4. **Axiom Alignment:**
+   - The axioms related to `Person` in the Enslaved ontology should be considered for alignment if similar axioms exist in the Wikibase ontology. For example:
+     - `¬Person ⊑¬∀hasAgentRecord.(OriginRecord ⊔ RaceRecord ⊔ AgeRecord ⊔ SexRecord ⊔ OccupationRecord ⊔ PersonStatusRecord)`
+
+These alignment rules establish a connection between the concept of "Person" in the Wikibase ontology and the corresponding concept in the Enslaved ontology, ensuring semantic interoperability between the two ontologies.

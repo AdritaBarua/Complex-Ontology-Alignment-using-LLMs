@@ -1,0 +1,60 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish a mapping between them. Let's break down the provided Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **Class: Place**
+   - URI: `http://example.org/entity/Q301`
+   - Label: "Place"
+
+2. **Object Property: hasName**
+   - URI: `http://example.org/prop/P20`
+   - Domain: `http://example.org/entity/Q410`
+   - Range: `http://wikiba.se/ontology#Statement`
+   - Label: "hasName"
+
+3. **Class: Statement**
+   - URI: `http://wikiba.se/ontology#Statement`
+
+4. **Datatype Property: full name as string**
+   - URI: `http://example.org/prop/statement/P20`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `http://www.w3.org/2001/XMLSchema#string`
+   - Label: "full name as string"
+
+### Corresponding Elements in Enslaved Ontology:
+1. **Class: Place**
+   - In the Enslaved ontology, `Place` is defined with axioms such as `Place ⊑ =1hasName.xsd:string` and `Place ⊑≥0hasAlternateName.xsd:string`.
+
+2. **Property: hasName**
+   - The property `hasName` in the Enslaved ontology is used with `Place` and is defined as `⊤⊑∀hasName.xsd:string`.
+
+3. **Class: Statement**
+   - The concept of `Statement` in Wikibase can be related to the concept of `EntityWithProvenance` in the Enslaved ontology, which involves provenance and documentation.
+
+4. **Property: full name as string**
+   - In the Enslaved ontology, the property `fullNameAsString` is used in the context of `NameVariant` and is defined as `NameVariant ⊑ =1fullNameAsString.xsd:string`.
+
+### Alignment Rules:
+Based on the above analysis, we can propose the following alignment rules:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q301` (Wikibase: Place) ≡ `Place` (Enslaved: Place)
+
+2. **Object Property Alignment:**
+   - `http://example.org/prop/P20` (Wikibase: hasName) ≡ `hasName` (Enslaved: hasName)
+
+3. **Class Alignment:**
+   - `http://wikiba.se/ontology#Statement` (Wikibase: Statement) ≡ `EntityWithProvenance` (Enslaved: EntityWithProvenance)
+
+4. **Datatype Property Alignment:**
+   - `http://example.org/prop/statement/P20` (Wikibase: full name as string) ≡ `fullNameAsString` (Enslaved: fullNameAsString)
+
+### Alignment Rules:
+```plaintext
+Alignment Rules:
+1. <http://example.org/entity/Q301> ≡ Place
+2. <http://example.org/prop/P20> ≡ hasName
+3. <http://wikiba.se/ontology#Statement> ≡ EntityWithProvenance
+4. <http://example.org/prop/statement/P20> ≡ fullNameAsString
+```
+
+These alignment rules establish a mapping between the concepts and properties in the Wikibase ontology and the Enslaved ontology, based on the provided module information.

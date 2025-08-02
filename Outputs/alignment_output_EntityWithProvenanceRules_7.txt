@@ -1,0 +1,60 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. Let's break down the provided Wikibase triple and align it with the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **EntityWithProvenance**:
+   - URI: `http://example.org/entity/Q67`
+   - Type: `owl:Class`
+   - Label: "EntityWithProvenance"
+
+2. **endsAt**:
+   - URI: `http://example.org/prop/P63`
+   - Type: `owl:ObjectProperty`
+   - Domain: `http://example.org/entity/Q67` (EntityWithProvenance)
+   - Range: `http://wikiba.se/ontology#Statement`
+   - Label: "endsAt"
+
+3. **Statement**:
+   - URI: `http://wikiba.se/ontology#Statement`
+   - Type: `owl:Class`
+
+4. **end date value**:
+   - URI: `http://example.org/prop/statement/P63`
+   - Type: `owl:DatatypeProperty`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `xsd:string`
+   - Label: "end date value"
+
+### Enslaved Ontology Correspondence:
+- **EntityWithProvenance** in Enslaved ontology is directly matched with the same class in the Wikibase triple.
+- The property `endsAt` in Wikibase can be aligned with temporal properties in the Enslaved ontology, such as `hasTemporalExtent`.
+- The `Statement` class in Wikibase can be aligned with the concept of `Event` in the Enslaved ontology, as both involve statements or records of occurrences.
+- The `end date value` property in Wikibase can be aligned with temporal extent properties in the Enslaved ontology, which are typically represented as `xsd:dateTime` or similar.
+
+### Alignment Rules:
+Based on the above analysis, the alignment rules can be formulated as follows:
+
+1. **Class Alignment**:
+   - `http://example.org/entity/Q67` (Wikibase: EntityWithProvenance) ≡ `EntityWithProvenance` (Enslaved)
+
+2. **Property Alignment**:
+   - `http://example.org/prop/P63` (Wikibase: endsAt) ≡ `hasTemporalExtent` (Enslaved)
+   - `http://example.org/prop/statement/P63` (Wikibase: end date value) ≡ `hasTemporalExtent` (Enslaved)
+
+3. **Class Alignment**:
+   - `http://wikiba.se/ontology#Statement` (Wikibase: Statement) ≡ `Event` (Enslaved)
+
+### Alignment Rules:
+```plaintext
+Alignment Rules:
+1. Class Alignment:
+   - Wikibase:EntityWithProvenance ≡ Enslaved:EntityWithProvenance
+
+2. Property Alignment:
+   - Wikibase:endsAt ≡ Enslaved:hasTemporalExtent
+   - Wikibase:end date value ≡ Enslaved:hasTemporalExtent
+
+3. Class Alignment:
+   - Wikibase:Statement ≡ Enslaved:Event
+```
+
+These alignment rules establish a correspondence between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

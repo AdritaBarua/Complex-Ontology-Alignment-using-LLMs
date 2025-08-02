@@ -1,0 +1,69 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. Let's break down the provided Wikibase triples and align them with the Enslaved ontology:
+
+### Wikibase Triple Analysis:
+
+1. **Wikibase Class: Person**
+   - URI: `http://example.org/entity/Q410`
+   - Label: "Person"
+
+2. **Wikibase Object Property: hasSurname**
+   - URI: `http://example.org/prop/P72`
+   - Domain: `http://example.org/entity/Q410` (Person)
+   - Range: `http://wikiba.se/ontology#Statement`
+   - Label: "hasSurname"
+
+3. **Wikibase Class: Statement**
+   - URI: `http://wikiba.se/ontology#Statement`
+
+4. **Wikibase Object Property: recordedAt**
+   - URI: `http://example.org/prop/qualifier/P18`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `http://example.org/entity/Q238` (Event)
+   - Label: "recordedAt"
+
+5. **Wikibase Class: Event**
+   - URI: `http://example.org/entity/Q238`
+   - Label: "Event"
+
+### Enslaved Ontology Analysis:
+
+- **Person** is a subclass of **Agent** in the Enslaved ontology.
+- **NameRecord** module in Enslaved ontology has properties related to names, including `hasSurnameAsString`.
+- **Event** is a class in the Enslaved ontology with various properties, including `recordedAt`.
+
+### Alignment Rules:
+
+Based on the analysis, we can establish the following alignment rules:
+
+1. **Aligning Person Class:**
+   - Wikibase `http://example.org/entity/Q410` (Person) aligns with Enslaved `Person`.
+   - **Alignment Rule:** `http://example.org/entity/Q410 ≡ Person`
+
+2. **Aligning hasSurname Property:**
+   - Wikibase `http://example.org/prop/P72` (hasSurname) aligns with Enslaved `hasSurnameAsString`.
+   - **Alignment Rule:** `http://example.org/prop/P72 ≡ hasSurnameAsString`
+
+3. **Aligning Statement Class:**
+   - Wikibase `http://wikiba.se/ontology#Statement` aligns with Enslaved `AgentRecord`.
+   - **Alignment Rule:** `http://wikiba.se/ontology#Statement ≡ AgentRecord`
+
+4. **Aligning recordedAt Property:**
+   - Wikibase `http://example.org/prop/qualifier/P18` (recordedAt) aligns with Enslaved `recordedAt`.
+   - **Alignment Rule:** `http://example.org/prop/qualifier/P18 ≡ recordedAt`
+
+5. **Aligning Event Class:**
+   - Wikibase `http://example.org/entity/Q238` (Event) aligns with Enslaved `Event`.
+   - **Alignment Rule:** `http://example.org/entity/Q238 ≡ Event`
+
+### Final Output:
+
+```plaintext
+Alignment Rules:
+1. http://example.org/entity/Q410 ≡ Person
+2. http://example.org/prop/P72 ≡ hasSurnameAsString
+3. http://wikiba.se/ontology#Statement ≡ AgentRecord
+4. http://example.org/prop/qualifier/P18 ≡ recordedAt
+5. http://example.org/entity/Q238 ≡ Event
+```
+
+These alignment rules establish a correspondence between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

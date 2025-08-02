@@ -1,0 +1,25 @@
+To align the given Wikibase ontology elements with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies. Based on the provided information, we can establish the following alignments:
+
+1. **Class Alignment:**
+   - **Wikibase Class `ed:Q410` (Person):** This aligns with the `Person` class in the Enslaved ontology. Both represent individuals or persons.
+   - **Wikibase Class `wikibase:Reference`:** This aligns with the `EntityWithProvenance` class in the Enslaved ontology. Both involve references or provenance information.
+   - **Wikibase Class `ed:Q67` (EntityWithProvenance):** This directly aligns with the `EntityWithProvenance` class in the Enslaved ontology.
+
+2. **Property Alignment:**
+   - **Wikibase Property `ep:P20` (hasName):** This aligns with the `hasNameVariant` property in the Enslaved ontology, which is used to associate a name with a `NameRecord`.
+   - **Wikibase Property `epr:P6` (isDirectlyBasedOn):** This aligns with the `isDirectlyBasedOn` property in the Enslaved ontology, which is used to indicate provenance relationships.
+
+Based on these alignments, we can generate the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `ed:Q410` ≡ `Person`
+   - `wikibase:Reference` ≡ `EntityWithProvenance`
+   - `ed:Q67` ≡ `EntityWithProvenance`
+
+2. **Property Alignment:**
+   - `ep:P20` ≡ `hasNameVariant`
+   - `epr:P6` ≡ `isDirectlyBasedOn`
+
+These alignment rules establish a correspondence between the classes and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two ontologies.

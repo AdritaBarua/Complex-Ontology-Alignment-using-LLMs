@@ -1,0 +1,25 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Wikibase `http://example.org/entity/Q410` (Person) aligns with Enslaved `Person`.
+     - **Rule:** `http://example.org/entity/Q410 ≡ Person`
+
+2. **Object Property Alignment:**
+   - Wikibase `http://example.org/prop/P20` (hasName) aligns with Enslaved `hasNameVariant`.
+     - **Rule:** `http://example.org/prop/P20 ≡ hasNameVariant`
+
+3. **Class Alignment:**
+   - Wikibase `http://wikiba.se/ontology#Statement` aligns with Enslaved `AgentRecord`.
+     - **Rule:** `http://wikiba.se/ontology#Statement ≡ AgentRecord`
+
+4. **Class Alignment:**
+   - Wikibase `http://wikiba.se/ontology#Reference` aligns with Enslaved `ExternalReference`.
+     - **Rule:** `http://wikiba.se/ontology#Reference ≡ ExternalReference`
+
+5. **Datatype Property Alignment:**
+   - Wikibase `http://example.org/prop/reference/P21` (hasExternalReference) aligns with Enslaved `hasExternalReference`.
+     - **Rule:** `http://example.org/prop/reference/P21 ≡ hasExternalReference`
+
+These alignment rules establish equivalences between the classes and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two ontologies.

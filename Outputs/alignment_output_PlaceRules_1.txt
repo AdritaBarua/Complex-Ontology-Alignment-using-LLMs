@@ -1,0 +1,37 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in both ontologies. The Wikibase triple indicates that `Q301` is a class labeled "Place". We will align this with the "Place" concept in the Enslaved ontology.
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - **Wikibase Class:** `http://example.org/entity/Q301` (labeled as "Place")
+   - **Enslaved Ontology Class:** `Place`
+   - **Alignment Rule:** `http://example.org/entity/Q301 ≡ Place`
+
+2. **Property Alignment:**
+   - Since the Wikibase triple does not provide specific properties, we will align based on the properties associated with the "Place" class in the Enslaved ontology. These properties include:
+     - `hasName`
+     - `hasAlternateName`
+     - `hasSpatialExtent`
+     - `hasTemporalExtent`
+     - `hasDescription`
+     - `hasPlaceTypeCV`
+     - `hasBroader`
+     - `isSpatiallyLocatedIn`
+     - `isAdministrativePartOf`
+
+3. **Axiom Alignment:**
+   - **Wikibase Axiom:** `rdf:type owl:Class`
+   - **Enslaved Ontology Axiom:** `Place ⊑ EntityWithProvenance`
+   - **Alignment Rule:** If `http://example.org/entity/Q301` is a class, then it inherits the axioms of `Place` in the Enslaved ontology, such as:
+     - `http://example.org/entity/Q301 ⊑ EntityWithProvenance`
+     - `http://example.org/entity/Q301 ⊑ =1hasName.xsd:string`
+     - `http://example.org/entity/Q301 ⊑≥0hasAlternateName.xsd:string`
+     - `http://example.org/entity/Q301 ⊑≤1hasSpatialExtent.SpatialExtent`
+     - `http://example.org/entity/Q301 ⊑≤1hasTemporalExtent.TemporalExtent`
+     - `http://example.org/entity/Q301 ⊑≥0hasDescription.Description`
+     - `http://example.org/entity/Q301 ⊑≤1hasPlaceTypeCV.PlaceTypeCV`
+     - `http://example.org/entity/Q301 ⊑≥0hasBroader.PlaceCV`
+     - `http://example.org/entity/Q301 ⊑≥0isSpatiallyLocatedIn.PlaceCV`
+     - `http://example.org/entity/Q301 ⊑≥0isAdministrativePartOf.PlaceCV`
+
+These alignment rules establish a correspondence between the "Place" concept in the Wikibase ontology and the "Place" concept in the Enslaved ontology, ensuring that the properties and axioms associated with "Place" in the Enslaved ontology are applicable to the Wikibase entity `Q301`.

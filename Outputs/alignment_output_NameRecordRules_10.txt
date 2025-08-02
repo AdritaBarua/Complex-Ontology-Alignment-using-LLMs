@@ -1,0 +1,29 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to map the classes and properties from the Wikibase ontology to the corresponding classes and properties in the Enslaved ontology. Let's analyze the provided Wikibase triples and find the corresponding elements in the Enslaved ontology:
+
+1. **Wikibase Triple:**
+   - `http://example.org/entity/Q410` is labeled as "Person".
+   - `http://example.org/prop/P71` is labeled as "hasAlternateName" with domain `Q410` (Person) and range `wikibase:Statement`.
+   - `http://wikiba.se/ontology#Statement` is a class.
+   - `http://example.org/prop/qualifier/P18` is labeled as "recordedAt" with domain `wikibase:Statement` and range `Q238` (Event).
+   - `http://example.org/entity/Q238` is labeled as "Event".
+
+2. **Enslaved Ontology Analysis:**
+   - The class `Person` in Wikibase can be aligned with the class `Person` in the Enslaved ontology, which is a subclass of `Agent`.
+   - The property `hasAlternateName` in Wikibase can be aligned with the property `hasAlternateName` in the Enslaved ontology, which is used with `Place` and `PlaceCV`.
+   - The class `Statement` in Wikibase does not have a direct equivalent in the Enslaved ontology, but it can be considered as a type of record or statement related to events or agents.
+   - The property `recordedAt` in Wikibase can be aligned with the property `recordedAt` in the Enslaved ontology, which is used to relate `AgentRecord` to `Event`.
+   - The class `Event` in Wikibase can be aligned with the class `Event` in the Enslaved ontology.
+
+3. **Alignment Rules:**
+   Based on the above analysis, the alignment rules can be formulated as follows:
+
+   ```plaintext
+   Alignment Rules:
+   1. Wikibase:Person ≡ Enslaved:Person
+   2. Wikibase:hasAlternateName ≡ Enslaved:hasAlternateName
+   3. Wikibase:Statement ≡ Enslaved:AgentRecord (or a similar concept related to records/statements)
+   4. Wikibase:recordedAt ≡ Enslaved:recordedAt
+   5. Wikibase:Event ≡ Enslaved:Event
+   ```
+
+These alignment rules map the classes and properties from the Wikibase ontology to the corresponding elements in the Enslaved ontology, based on the provided module information.

@@ -1,0 +1,50 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to map the concepts and properties from the Wikibase ontology to the corresponding concepts and properties in the Enslaved ontology. Let's break down the given Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **Wikibase Class:**
+   - `http://example.org/entity/Q410` is labeled as "Person".
+   - In the Enslaved ontology, "Person" is a subclass of "Agent" (Axiom: `Person ⊑ Agent`).
+
+2. **Wikibase Object Property:**
+   - `http://example.org/prop/P72` is labeled as "hasSurname".
+   - The domain of this property is `http://example.org/entity/Q410` (Person).
+   - The range of this property is `http://wikiba.se/ontology#Statement`.
+
+3. **Wikibase Class:**
+   - `http://wikiba.se/ontology#Statement` is a class.
+
+### Corresponding Elements in the Enslaved Ontology:
+- **Person:**
+  - In the Enslaved ontology, "Person" is a subclass of "Agent" and can have various records associated with it, such as NameRecord, which includes name-related information.
+
+- **hasSurname:**
+  - In the Enslaved ontology, the concept of a surname is captured within the NameVariant class, which is part of the NameRecord module. Specifically, the axiom `NameVariant ⊑≤1hasSurnameAsString.xsd:string` indicates that a NameVariant can have a surname as a string.
+
+- **Statement:**
+  - The concept of a "Statement" in Wikibase could be related to records or descriptions in the Enslaved ontology. However, without additional context, it is challenging to find a direct equivalent. For the purpose of this alignment, we will focus on the name-related aspects.
+
+### Alignment Rules:
+Based on the above analysis, we can propose the following alignment rules:
+
+1. **Class Alignment:**
+   - Align the Wikibase class `http://example.org/entity/Q410` (Person) with the Enslaved class `Person`.
+     ```
+     Alignment Rule 1: 
+     Wikibase: <http://example.org/entity/Q410> ≡ Enslaved: Person
+     ```
+
+2. **Property Alignment:**
+   - Align the Wikibase property `http://example.org/prop/P72` (hasSurname) with the Enslaved property `hasSurnameAsString` within the context of a NameVariant.
+     ```
+     Alignment Rule 2: 
+     Wikibase: <http://example.org/prop/P72> ≡ Enslaved: hasSurnameAsString
+     ```
+
+3. **Class Alignment for Statement:**
+   - Since the concept of a "Statement" is not directly mapped, we can align it with the concept of a record or description in the Enslaved ontology. For this example, we will align it with `NameRecord` as it pertains to name information.
+     ```
+     Alignment Rule 3: 
+     Wikibase: <http://wikiba.se/ontology#Statement> ≡ Enslaved: NameRecord
+     ```
+
+These alignment rules provide a mapping between the Wikibase ontology and the Enslaved ontology based on the given triple and the module information provided.

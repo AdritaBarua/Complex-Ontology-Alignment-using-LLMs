@@ -1,0 +1,28 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish the relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+1. **Class Alignment:**
+   - **Wikibase Class `http://example.org/entity/Q410` (Person) with Enslaved Class `Person`:**
+     - Alignment Rule: `http://example.org/entity/Q410 ≡ Person`
+     - Explanation: The Wikibase class labeled "Person" corresponds directly to the Enslaved ontology class `Person`, which is a subclass of `Agent`.
+
+2. **Property Alignment:**
+   - **Wikibase Property `http://example.org/prop/P71` (hasAlternateName) with Enslaved Property `hasAlternateName`:**
+     - Alignment Rule: `http://example.org/prop/P71 ≡ hasAlternateName`
+     - Explanation: The property `hasAlternateName` in the Wikibase ontology is used to denote alternate names for a person, which aligns with the Enslaved ontology's use of `hasAlternateName` for `Place` and `PlaceCV` entities. Although the domain differs (Person vs. Place), the property serves a similar purpose.
+
+3. **Class Alignment:**
+   - **Wikibase Class `http://wikiba.se/ontology#Statement` with Enslaved Class `AgentRecord`:**
+     - Alignment Rule: `http://wikiba.se/ontology#Statement ≡ AgentRecord`
+     - Explanation: The `Statement` class in Wikibase is used in the context of properties like `hasAlternateName`, which aligns with the concept of `AgentRecord` in the Enslaved ontology, as `AgentRecord` is a central concept for recording information about agents.
+
+4. **Class Alignment:**
+   - **Wikibase Class `http://wikiba.se/ontology#Reference` with Enslaved Class `ExternalReference`:**
+     - Alignment Rule: `http://wikiba.se/ontology#Reference ≡ ExternalReference`
+     - Explanation: The `Reference` class in Wikibase is used in conjunction with properties like `hasExternalReference`, which aligns with the `ExternalReference` class in the Enslaved ontology, as both are used to denote external references.
+
+5. **Property Alignment:**
+   - **Wikibase Property `http://example.org/prop/reference/P21` (hasExternalReference) with Enslaved Property `hasExternalReference`:**
+     - Alignment Rule: `http://example.org/prop/reference/P21 ≡ hasExternalReference`
+     - Explanation: The property `hasExternalReference` in Wikibase is used to denote external references, which directly aligns with the `hasExternalReference` property in the Enslaved ontology.
+
+These alignment rules establish a mapping between the concepts and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two ontologies.

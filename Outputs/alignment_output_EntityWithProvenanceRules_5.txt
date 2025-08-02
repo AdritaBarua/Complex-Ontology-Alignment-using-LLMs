@@ -1,0 +1,59 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish a mapping between them. Let's break down the provided Wikibase triple and align it with the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **EntityWithProvenance**:
+   - URI: `http://example.org/entity/Q67`
+   - Type: `owl:Class`
+   - Label: "EntityWithProvenance"
+
+2. **availableFrom**:
+   - URI: `http://example.org/prop/P26`
+   - Type: `owl:ObjectProperty`
+   - Domain: `http://example.org/entity/Q67` (EntityWithProvenance)
+   - Range: `http://wikiba.se/ontology#Statement`
+   - Label: "availableFrom"
+
+3. **Statement**:
+   - URI: `http://wikiba.se/ontology#Statement`
+   - Type: `owl:Class`
+
+4. **availability value**:
+   - URI: `http://example.org/prop/statement/P26`
+   - Type: `owl:DatatypeProperty`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `xsd:string`
+   - Label: "availability value"
+
+### Enslaved Ontology Correspondence:
+- **EntityWithProvenance** in the Enslaved ontology is a class with axioms related to provenance information.
+- **availableFrom** in the Enslaved ontology is a property associated with `EntityWithProvenance` and is defined as a string (`xsd:string`).
+
+### Alignment Rules:
+Based on the above analysis, we can establish the following alignment rules:
+
+1. **Class Alignment**:
+   - Align `http://example.org/entity/Q67` (Wikibase) with `EntityWithProvenance` (Enslaved).
+   - Alignment Rule: `EntityWithProvenance (Wikibase) ≡ EntityWithProvenance (Enslaved)`
+
+2. **Property Alignment**:
+   - Align `http://example.org/prop/P26` (Wikibase) with `availableFrom` (Enslaved).
+   - Alignment Rule: `availableFrom (Wikibase) ≡ availableFrom (Enslaved)`
+
+3. **Range Alignment**:
+   - Align `http://wikiba.se/ontology#Statement` (Wikibase) with `xsd:string` as used in the Enslaved ontology for `availableFrom`.
+   - Alignment Rule: `Statement (Wikibase) ≡ xsd:string (Enslaved)`
+
+4. **Datatype Property Alignment**:
+   - Align `http://example.org/prop/statement/P26` (Wikibase) with the datatype property aspect of `availableFrom` in the Enslaved ontology.
+   - Alignment Rule: `availability value (Wikibase) ≡ availableFrom (Enslaved)`
+
+### Final Output:
+```plaintext
+Alignment Rules:
+1. EntityWithProvenance (Wikibase) ≡ EntityWithProvenance (Enslaved)
+2. availableFrom (Wikibase) ≡ availableFrom (Enslaved)
+3. Statement (Wikibase) ≡ xsd:string (Enslaved)
+4. availability value (Wikibase) ≡ availableFrom (Enslaved)
+```
+
+These alignment rules establish a correspondence between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

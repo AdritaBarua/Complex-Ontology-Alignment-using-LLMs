@@ -1,0 +1,43 @@
+To align the given Wikibase ontology triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish the relationships between them. Let's break down the given Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **Person (Q410)**: This is a class in the Wikibase ontology.
+2. **hasParticipantRole (P17)**: This is an object property with domain `Person` and range `Statement`.
+3. **Statement**: This is a class in the Wikibase ontology.
+4. **roleProvidedBy (P19)**: This is an object property with domain `Statement` and range `Event`.
+5. **Event (Q238)**: This is a class in the Wikibase ontology.
+
+### Corresponding Elements in the Enslaved Ontology:
+1. **Person**: In the Enslaved ontology, `Person` is a subclass of `Agent` (Axiom 1 in the Agent and Person module).
+2. **hasParticipantRole**: In the Enslaved ontology, the property `providesParticipantRole` is used in the context of `ParticipantRoleRecord` (Axiom 2 in the ParticipantRoleRecord module).
+3. **Statement**: There is no direct equivalent of `Statement` in the Enslaved ontology, but `AgentRecord` can be considered as a record or statement related to an agent.
+4. **roleProvidedBy**: In the Enslaved ontology, `roleProvidedBy` is a subproperty of `hasParticipantRoleRecord−` (Axiom 8 in the ParticipantRoleRecord module).
+5. **Event**: In the Enslaved ontology, `Event` is a class with various properties (Event module).
+
+### Alignment Rules:
+Based on the above analysis, we can propose the following alignment rules:
+
+1. **Class Alignment**:
+   - `Wikibase:Person` (Q410) ≡ `Enslaved:Person`
+   - `Wikibase:Event` (Q238) ≡ `Enslaved:Event`
+
+2. **Property Alignment**:
+   - `Wikibase:hasParticipantRole` (P17) ≡ `Enslaved:providesParticipantRole`
+   - `Wikibase:roleProvidedBy` (P19) ≡ `Enslaved:roleProvidedBy`
+
+3. **Domain and Range Alignment**:
+   - `Wikibase:hasParticipantRole` (P17) with domain `Wikibase:Person` aligns with `Enslaved:providesParticipantRole` with domain `Enslaved:ParticipantRoleRecord`.
+   - `Wikibase:roleProvidedBy` (P19) with domain `Wikibase:Statement` aligns with `Enslaved:roleProvidedBy` with domain `Enslaved:ParticipantRoleRecord`.
+
+### Alignment Rules:
+```plaintext
+Alignment Rules:
+1. Wikibase:Person ≡ Enslaved:Person
+2. Wikibase:Event ≡ Enslaved:Event
+3. Wikibase:hasParticipantRole ≡ Enslaved:providesParticipantRole
+4. Wikibase:roleProvidedBy ≡ Enslaved:roleProvidedBy
+5. Domain(Wikibase:hasParticipantRole) = Wikibase:Person ≡ Domain(Enslaved:providesParticipantRole) = Enslaved:ParticipantRoleRecord
+6. Domain(Wikibase:roleProvidedBy) = Wikibase:Statement ≡ Domain(Enslaved:roleProvidedBy) = Enslaved:ParticipantRoleRecord
+```
+
+These alignment rules establish a correspondence between the classes and properties in the Wikibase and Enslaved ontologies, based on the provided module information.

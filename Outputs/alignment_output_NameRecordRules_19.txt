@@ -1,0 +1,37 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. Based on the provided information, here are the alignment rules:
+
+1. **Class Alignment:**
+   - **Wikibase Class `Person` (http://example.org/entity/Q410):**
+     - Aligns with the Enslaved ontology class `Person`.
+     - **Alignment Rule:** `http://example.org/entity/Q410 ≡ Person`
+
+2. **Object Property Alignment:**
+   - **Wikibase Object Property `hasSurname` (http://example.org/prop/P72):**
+     - The domain of `hasSurname` is `Person` in Wikibase, which aligns with the `Person` class in the Enslaved ontology.
+     - The range of `hasSurname` is `Statement` in Wikibase, which does not have a direct equivalent in the Enslaved ontology. However, the `NameVariant` class in the Enslaved ontology has a property `hasSurnameAsString` that can be considered equivalent.
+     - **Alignment Rule:** `http://example.org/prop/P72 ≡ hasSurnameAsString`
+
+3. **Class Alignment:**
+   - **Wikibase Class `Statement` (http://wikiba.se/ontology#Statement):**
+     - This class does not have a direct equivalent in the Enslaved ontology. However, it can be conceptually related to `NameVariant` as it is used in the context of names.
+     - **Alignment Rule:** `http://wikiba.se/ontology#Statement ≡ NameVariant`
+
+4. **Class Alignment:**
+   - **Wikibase Class `Reference` (http://wikiba.se/ontology#Reference):**
+     - Aligns with the Enslaved ontology class `ExternalReference`.
+     - **Alignment Rule:** `http://wikiba.se/ontology#Reference ≡ ExternalReference`
+
+5. **Datatype Property Alignment:**
+   - **Wikibase Datatype Property `hasExternalReference` (http://example.org/prop/reference/P21):**
+     - The domain of `hasExternalReference` is `Reference` in Wikibase, which aligns with `ExternalReference` in the Enslaved ontology.
+     - The range is `xsd:string`, which is consistent with the datatype used in the Enslaved ontology.
+     - **Alignment Rule:** `http://example.org/prop/reference/P21 ≡ hasExternalReference`
+
+**Alignment Rules:**
+1. `http://example.org/entity/Q410 ≡ Person`
+2. `http://example.org/prop/P72 ≡ hasSurnameAsString`
+3. `http://wikiba.se/ontology#Statement ≡ NameVariant`
+4. `http://wikiba.se/ontology#Reference ≡ ExternalReference`
+5. `http://example.org/prop/reference/P21 ≡ hasExternalReference`
+
+These alignment rules establish a correspondence between the classes and properties in the Wikibase ontology and the Enslaved ontology based on the provided module information.

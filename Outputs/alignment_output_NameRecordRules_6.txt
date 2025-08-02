@@ -1,0 +1,62 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish a mapping between them. Let's break down the Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+### Wikibase Triple Breakdown:
+1. **Class: Person**
+   - URI: `http://example.org/entity/Q410`
+   - Label: "Person"
+
+2. **Object Property: hasSurname**
+   - URI: `http://example.org/prop/P72`
+   - Domain: `http://example.org/entity/Q410` (Person)
+   - Range: `http://wikiba.se/ontology#Statement`
+
+3. **Class: Statement**
+   - URI: `http://wikiba.se/ontology#Statement`
+
+4. **Datatype Property: surname as string**
+   - URI: `http://example.org/prop/statement/P72`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `http://www.w3.org/2001/XMLSchema#string`
+
+### Corresponding Elements in the Enslaved Ontology:
+1. **Class: Person**
+   - In the Enslaved ontology, `Person` is a subclass of `Agent`:
+     - Axiom: `Person ⊑ Agent`
+
+2. **Property: hasSurname**
+   - In the Enslaved ontology, the `NameVariant` class has a property `hasSurnameAsString`:
+     - Axiom: `NameVariant ⊑≤1hasSurnameAsString.xsd:string`
+
+3. **Class: Statement**
+   - The concept of `Statement` in Wikibase can be related to `AgentRecord` in the Enslaved ontology, as both are used to record information about agents.
+
+### Alignment Rules:
+Based on the above analysis, we can propose the following alignment rules:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q410` (Wikibase Person) ≡ `Person` (Enslaved Ontology)
+
+2. **Property Alignment:**
+   - `http://example.org/prop/P72` (Wikibase hasSurname) ≡ `hasSurnameAsString` (Enslaved Ontology)
+   - Domain Alignment: `http://example.org/entity/Q410` (Wikibase Person) ≡ `NameVariant` (Enslaved Ontology)
+   - Range Alignment: `http://wikiba.se/ontology#Statement` (Wikibase Statement) ≡ `xsd:string` (Enslaved Ontology)
+
+3. **Class Alignment:**
+   - `http://wikiba.se/ontology#Statement` (Wikibase Statement) ≡ `AgentRecord` (Enslaved Ontology)
+
+### Final Alignment Rules:
+```plaintext
+Alignment Rules:
+1. Class Alignment:
+   - Wikibase: http://example.org/entity/Q410 ≡ Enslaved: Person
+
+2. Property Alignment:
+   - Wikibase: http://example.org/prop/P72 ≡ Enslaved: hasSurnameAsString
+   - Domain: Wikibase: http://example.org/entity/Q410 ≡ Enslaved: NameVariant
+   - Range: Wikibase: http://wikiba.se/ontology#Statement ≡ Enslaved: xsd:string
+
+3. Class Alignment:
+   - Wikibase: http://wikiba.se/ontology#Statement ≡ Enslaved: AgentRecord
+```
+
+These alignment rules establish a mapping between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

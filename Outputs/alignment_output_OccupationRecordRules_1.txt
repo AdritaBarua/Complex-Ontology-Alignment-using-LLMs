@@ -1,0 +1,25 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in the Enslaved ontology that match the concept of "Occupation" from the Wikibase ontology. Based on the provided modules and axioms from the Enslaved ontology, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - **Wikibase Class:** `http://example.org/entity/Q108` (labeled as "Occupation")
+   - **Enslaved Ontology Class:** `OccupationRecord`
+   - **Alignment Rule:** `http://example.org/entity/Q108 ≡ OccupationRecord`
+
+2. **Property Alignment:**
+   - **Wikibase Property:** Not explicitly provided in the triple, but inferred from the context of "Occupation."
+   - **Enslaved Ontology Property:** `hasValue` (related to `Occupations`)
+   - **Alignment Rule:** If there is a property in Wikibase that specifies the value of an occupation, it should align with `hasValue` in the Enslaved ontology.
+
+3. **Subclass Alignment:**
+   - **Wikibase Subclass:** Not explicitly provided, but if there are subclasses related to "Occupation" in Wikibase, they should align with subclasses or related concepts in the Enslaved ontology.
+   - **Enslaved Ontology Subclass:** `AgentRecord` (since `OccupationRecord ⊑ AgentRecord`)
+   - **Alignment Rule:** Any subclass of `http://example.org/entity/Q108` in Wikibase should be aligned with `AgentRecord` or its subclasses in the Enslaved ontology.
+
+4. **Domain and Range Alignment:**
+   - **Wikibase Domain/Range:** Not explicitly provided, but inferred from the context.
+   - **Enslaved Ontology Domain/Range:** `hasOccupationRecord ⊑ hasPersonRecord`
+   - **Alignment Rule:** If there are properties in Wikibase that relate "Occupation" to other entities, they should align with `hasOccupationRecord` and its domain/range in the Enslaved ontology.
+
+These alignment rules provide a mapping between the concept of "Occupation" in the Wikibase ontology and the corresponding concepts and properties in the Enslaved ontology. This alignment ensures that data and semantics related to occupations are consistently interpreted across both ontologies.

@@ -1,0 +1,26 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. The provided Wikibase triple includes a class labeled "ResearchProject" and properties related to statements. Let's break down the alignment process:
+
+1. **Identify Corresponding Concepts:**
+   - The class `ed:Q172` with the label "ResearchProject" in the Wikibase ontology corresponds to the `ResearchProject` class in the Enslaved ontology. This is a direct match based on the label.
+
+2. **Identify Corresponding Properties:**
+   - The properties `ep:P12` and `eps:P12` in the Wikibase ontology are not explicitly defined in the provided information. However, they are related to statements, as indicated by the presence of `wikibase:Statement`.
+
+3. **Establish Alignment Rules:**
+   - Since `ResearchProject` in the Enslaved ontology is a subclass of `Event` and `ProvenanceActivity`, we can align the `ResearchProject` class in Wikibase to the same class in Enslaved.
+   - The `wikibase:Statement` class can be aligned with the concept of `EntityWithProvenance` in the Enslaved ontology, as both involve provenance and documentation aspects.
+
+Based on these observations, the alignment rules can be formulated as follows:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `ed:Q172` (Wikibase) ≡ `ResearchProject` (Enslaved)
+
+2. **Property Alignment:**
+   - `wikibase:Statement` (Wikibase) ≡ `EntityWithProvenance` (Enslaved)
+
+3. **Additional Considerations:**
+   - If `ep:P12` and `eps:P12` are related to specific properties of `ResearchProject` or `EntityWithProvenance`, further analysis of their roles and relationships in the Wikibase ontology would be needed to establish more detailed alignment rules.
+
+These alignment rules establish a basic correspondence between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

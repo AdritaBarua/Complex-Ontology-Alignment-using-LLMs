@@ -1,0 +1,35 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to map the concepts and properties from the Wikibase ontology to the corresponding concepts and properties in the Enslaved ontology. Let's break down the Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+1. **Wikibase Class: Person (http://example.org/entity/Q410)**
+   - In the Enslaved ontology, `Person` is a subclass of `Agent`. This is directly aligned with the `Person` class in the Wikibase ontology.
+
+2. **Wikibase Property: hasRaceOrColor (http://example.org/prop/P32)**
+   - The domain of this property is `Person`, and the range is `Statement`.
+   - In the Enslaved ontology, `RaceRecord` is a subclass of `AgentRecord` and is associated with `Person` through the property `hasRaceRecord`. The `RaceRecord` can be aligned with the `Statement` class in Wikibase, as it represents a record or statement about a person's race.
+
+3. **Wikibase Class: Statement (http://wikiba.se/ontology#Statement)**
+   - This can be aligned with `AgentRecord` in the Enslaved ontology, as both represent records or statements about an entity.
+
+4. **Wikibase Property: recordedAt (http://example.org/prop/qualifier/P18)**
+   - The domain of this property is `Statement`, and the range is `Event`.
+   - In the Enslaved ontology, there is a property `recordedAt` that links `AgentRecord` to `Event`. This is a direct alignment.
+
+5. **Wikibase Class: Event (http://example.org/entity/Q238)**
+   - This is directly aligned with the `Event` class in the Enslaved ontology.
+
+Based on these mappings, we can generate the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q410` (Wikibase: Person) ≡ `Person` (Enslaved: Person)
+
+2. **Property Alignment:**
+   - `http://example.org/prop/P32` (Wikibase: hasRaceOrColor) ≡ `hasRaceRecord` (Enslaved: hasRaceRecord)
+   - `http://example.org/prop/qualifier/P18` (Wikibase: recordedAt) ≡ `recordedAt` (Enslaved: recordedAt)
+
+3. **Class Alignment:**
+   - `http://wikiba.se/ontology#Statement` (Wikibase: Statement) ≡ `AgentRecord` (Enslaved: AgentRecord)
+   - `http://example.org/entity/Q238` (Wikibase: Event) ≡ `Event` (Enslaved: Event)
+
+These alignment rules establish a correspondence between the concepts and properties in the Wikibase ontology and the Enslaved ontology, allowing for interoperability and data integration between the two ontologies.

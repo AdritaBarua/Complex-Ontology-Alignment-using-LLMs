@@ -1,0 +1,28 @@
+To align the given Wikibase ontology elements with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies. Based on the provided information, we can derive the following alignment rules:
+
+1. **Aligning Classes:**
+   - The class `wikibase:Statement` in the Wikibase ontology can be aligned with the class `AgentRecord` in the Enslaved ontology. This is because both represent records or statements related to agents.
+   - The class `ed:Q67` labeled as "EntityWithProvenance" in the Wikibase ontology directly corresponds to the class `EntityWithProvenance` in the Enslaved ontology.
+
+2. **Aligning Object Properties:**
+   - The property `ep:P39` labeled as "hasInterAgentRelationship" in the Wikibase ontology can be aligned with the property `refersToEvent` in the Enslaved ontology. This is inferred from the context that both properties relate to interactions or relationships between agents or entities.
+   - The property `epr:P6` labeled as "isDirectlyBasedOn" in the Wikibase ontology directly corresponds to the property `isDirectlyBasedOn` in the Enslaved ontology.
+
+3. **Domain and Range Alignment:**
+   - For the property `ep:P39` ("hasInterAgentRelationship"), the domain is `<http://example.org/entity/Q410>`, which is not explicitly defined in the provided Enslaved ontology. However, it can be inferred that this domain relates to agents or entities involved in relationships, similar to `Agent` or `EntityWithProvenance`.
+   - The range of `ep:P39` is `wikibase:Statement`, which aligns with `AgentRecord` in the Enslaved ontology.
+   - For the property `epr:P6` ("isDirectlyBasedOn"), the domain is `wikibase:Reference`, which can be aligned with `EntityWithProvenance` as it involves provenance information.
+   - The range of `epr:P6` is `ed:Q67` ("EntityWithProvenance"), which directly aligns with `EntityWithProvenance` in the Enslaved ontology.
+
+**Alignment Rules:**
+
+1. `wikibase:Statement ≡ AgentRecord`
+2. `ed:Q67 ≡ EntityWithProvenance`
+3. `ep:P39 ≡ refersToEvent`
+4. `epr:P6 ≡ isDirectlyBasedOn`
+5. `Domain(ep:P39) ≡ Agent ⊔ EntityWithProvenance`
+6. `Range(ep:P39) ≡ AgentRecord`
+7. `Domain(epr:P6) ≡ EntityWithProvenance`
+8. `Range(epr:P6) ≡ EntityWithProvenance`
+
+These alignment rules establish a correspondence between the concepts and properties in the Wikibase and Enslaved ontologies, facilitating interoperability and data integration between the two systems.

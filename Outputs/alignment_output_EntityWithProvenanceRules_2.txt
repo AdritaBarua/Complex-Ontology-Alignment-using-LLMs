@@ -1,0 +1,27 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish the relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q67` (Wikibase) is equivalent to `EntityWithProvenance` (Enslaved Ontology).
+     - **Rule:** `http://example.org/entity/Q67 ≡ EntityWithProvenance`
+
+2. **Property Alignment:**
+   - `http://example.org/prop/P25` (Wikibase) labeled as "reportsOn" corresponds to the property `reportsOn` in the Enslaved ontology.
+     - **Rule:** `http://example.org/prop/P25 ≡ reportsOn`
+
+3. **Domain and Range Alignment:**
+   - The domain of `http://example.org/prop/P25` is `http://example.org/entity/Q67` (Wikibase), which aligns with `EntityWithProvenance` in the Enslaved ontology.
+     - **Rule:** `Domain(http://example.org/prop/P25) ≡ EntityWithProvenance`
+   - The range of `http://example.org/prop/P25` is `http://wikiba.se/ontology#Statement`, which corresponds to `Event` in the Enslaved ontology, as `reportsOn` in the Enslaved ontology is used to relate `EntityWithProvenance` to `Event`.
+     - **Rule:** `Range(http://example.org/prop/P25) ≡ Event`
+
+4. **Class Alignment:**
+   - `http://example.org/entity/Q238` (Wikibase) is equivalent to `Event` (Enslaved Ontology).
+     - **Rule:** `http://example.org/entity/Q238 ≡ Event`
+
+5. **Property Alignment:**
+   - `http://example.org/prop/statement/P25` (Wikibase) labeled as "reported event" corresponds to the property `refersToEvent` in the Enslaved ontology, as it relates a statement to an event.
+     - **Rule:** `http://example.org/prop/statement/P25 ≡ refersToEvent`
+
+These alignment rules establish the equivalence between the classes and properties in the Wikibase ontology and the Enslaved ontology, allowing for interoperability and data integration between the two ontologies.

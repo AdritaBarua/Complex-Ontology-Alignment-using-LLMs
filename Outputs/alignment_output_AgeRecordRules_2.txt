@@ -1,0 +1,31 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in the Enslaved ontology that match or relate to the Wikibase concept. The Wikibase triple provided is:
+
+```
+###  http://example.org/entity/Q412
+ed:Q412
+rdf:type owl:owl#Class ;
+rdfs:label "AgeCategory" .
+```
+
+This triple indicates that `ed:Q412` is a class labeled "AgeCategory" in the Wikibase ontology. We need to find how this concept aligns with the Enslaved ontology.
+
+In the Enslaved ontology, the concept `AgeCategory` is mentioned in the `AgeRecord` module. Specifically, the axioms related to `AgeCategory` are:
+
+- `AgeRecord ⊑ ≤1hasValue.AgeCategory` (2)
+- `AgeRecord ⊑ ∃hasValue.AgeCategory ⊔ ∃hasAgeValue.xsd:double` (4)
+
+These axioms indicate that `AgeCategory` is a value associated with `AgeRecord`.
+
+Based on this information, we can generate the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Align the Wikibase class `ed:Q412` labeled "AgeCategory" with the Enslaved ontology concept `AgeCategory`.
+   - **Rule:** `ed:Q412 owl:equivalentClass AgeCategory`
+
+2. **Property Alignment:**
+   - Align the property that associates `AgeCategory` with `AgeRecord` in the Enslaved ontology.
+   - **Rule:** `ed:Q412 rdfs:subClassOf ∃hasValue.AgeCategory`
+
+These alignment rules establish a connection between the Wikibase concept of "AgeCategory" and its corresponding representation in the Enslaved ontology, ensuring that the semantic meaning is preserved across both ontologies.

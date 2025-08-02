@@ -1,0 +1,29 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish the relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q410` (Wikibase: Person) aligns with `Person` in the Enslaved ontology.
+     - **Rule:** `ed:Q410 ≡ Person`
+
+2. **Property Alignment:**
+   - `http://example.org/prop/P17` (Wikibase: hasParticipantRole) aligns with `providesParticipantRole` in the Enslaved ontology.
+     - **Rule:** `ep:P17 ≡ providesParticipantRole`
+
+3. **Class Alignment:**
+   - `http://wikiba.se/ontology#Statement` (Wikibase: Statement) aligns with `ParticipantRoleRecord` in the Enslaved ontology, as it is related to participant roles.
+     - **Rule:** `wikibase:Statement ≡ ParticipantRoleRecord`
+
+4. **Class Alignment:**
+   - `http://wikiba.se/ontology#Reference` (Wikibase: Reference) aligns with `EntityWithProvenance` in the Enslaved ontology, as both involve provenance and references.
+     - **Rule:** `wikibase:Reference ≡ EntityWithProvenance`
+
+5. **Property Alignment:**
+   - `http://example.org/prop/reference/P6` (Wikibase: isDirectlyBasedOn) aligns with `isDirectlyBasedOn` in the Enslaved ontology.
+     - **Rule:** `epr:P6 ≡ isDirectlyBasedOn`
+
+6. **Class Alignment:**
+   - `http://example.org/entity/Q67` (Wikibase: EntityWithProvenance) aligns with `EntityWithProvenance` in the Enslaved ontology.
+     - **Rule:** `ed:Q67 ≡ EntityWithProvenance`
+
+These alignment rules establish a mapping between the concepts and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two ontologies.

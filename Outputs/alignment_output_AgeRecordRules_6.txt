@@ -1,0 +1,37 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to map the concepts and properties from the Wikibase ontology to the corresponding concepts and properties in the Enslaved ontology. Let's break down the Wikibase triple and find the corresponding elements in the Enslaved ontology:
+
+1. **Wikibase Class: Person (Q410)**
+   - In the Enslaved ontology, `Person` is a subclass of `Agent`. This is directly aligned with the `Person` class in the Wikibase ontology.
+
+2. **Wikibase Property: hasAgeRecord (P42)**
+   - The property `hasAgeRecord` in the Wikibase ontology has a domain of `Person` and a range of `Statement`.
+   - In the Enslaved ontology, `hasAgeRecord` is a subproperty of `hasPersonRecord`, and `AgeRecord` is a subclass of `AgentRecord`. The domain is `Person`, and the range is `AgeRecord`.
+
+3. **Wikibase Class: Statement**
+   - In the Enslaved ontology, `AgentRecord` can be considered analogous to `Statement` in the Wikibase ontology, as both are used to record information about agents.
+
+4. **Wikibase Property: recordedAt (P18)**
+   - The property `recordedAt` in the Wikibase ontology has a domain of `Statement` and a range of `Event`.
+   - In the Enslaved ontology, the axiom `AgentRecord(x)∧ recordedAt(x,y)∧ Event(y) → reportsOn(x,y)` suggests a similar relationship, where `AgentRecord` is recorded at an `Event`.
+
+5. **Wikibase Class: Event (Q238)**
+   - The `Event` class in the Wikibase ontology corresponds directly to the `Event` class in the Enslaved ontology.
+
+Based on these mappings, we can generate the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `Wikibase:Person` ≡ `Enslaved:Person`
+
+2. **Property Alignment:**
+   - `Wikibase:hasAgeRecord` ≡ `Enslaved:hasAgeRecord`
+   - `Wikibase:recordedAt` ≡ `Enslaved:recordedAt`
+
+3. **Class Alignment:**
+   - `Wikibase:Statement` ≡ `Enslaved:AgentRecord`
+
+4. **Class Alignment:**
+   - `Wikibase:Event` ≡ `Enslaved:Event`
+
+These alignment rules map the concepts and properties from the Wikibase ontology to the corresponding elements in the Enslaved ontology, based on the provided module information.

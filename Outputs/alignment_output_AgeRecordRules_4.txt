@@ -1,0 +1,47 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to map the concepts and properties from the Wikibase ontology to the corresponding concepts and properties in the Enslaved ontology. Let's break down the given Wikibase triples and find the corresponding alignment rules:
+
+### Wikibase Triple Breakdown:
+1. **Person Class:**
+   - `http://example.org/entity/Q410` is labeled as "Person".
+   - In the Enslaved ontology, `Person` is a subclass of `Agent`.
+
+2. **hasAgeRecord Property:**
+   - `http://example.org/prop/P42` is labeled as "hasAgeRecord".
+   - The domain is `http://example.org/entity/Q410` (Person).
+   - The range is `http://wikiba.se/ontology#Statement`.
+   - In the Enslaved ontology, `hasAgeRecord` is a subproperty of `hasPersonRecord`.
+
+3. **Statement Class:**
+   - `http://wikiba.se/ontology#Statement` is a class.
+   - In the Enslaved ontology, `AgentRecord` is a class that can be associated with `Person`.
+
+4. **age value Property:**
+   - `http://example.org/prop/statement/P42` is labeled as "age value".
+   - The domain is `http://wikiba.se/ontology#Statement`.
+   - The range is `http://example.org/entity/Q424` (AgeRecord).
+   - In the Enslaved ontology, `AgeRecord` is a subclass of `AgentRecord`.
+
+5. **AgeRecord Class:**
+   - `http://example.org/entity/Q424` is labeled as "AgeRecord".
+   - In the Enslaved ontology, `AgeRecord` is a subclass of `AgentRecord`.
+
+6. **hasAgeValue Property:**
+   - `http://example.org/prop/direct/P3` is labeled as "hasAgeValue".
+   - The domain is `http://example.org/entity/Q424` (AgeRecord).
+   - The range is `xsd:double`.
+   - In the Enslaved ontology, `AgeRecord` has a property `hasAgeValue` with a range of `xsd:double`.
+
+### Alignment Rules:
+Based on the above analysis, the alignment rules between the Wikibase ontology and the Enslaved ontology are as follows:
+
+1. **Class Alignment:**
+   - `http://example.org/entity/Q410` (Wikibase Person) ≡ `Person` (Enslaved)
+   - `http://example.org/entity/Q424` (Wikibase AgeRecord) ≡ `AgeRecord` (Enslaved)
+   - `http://wikiba.se/ontology#Statement` (Wikibase Statement) ≡ `AgentRecord` (Enslaved)
+
+2. **Property Alignment:**
+   - `http://example.org/prop/P42` (Wikibase hasAgeRecord) ≡ `hasAgeRecord` (Enslaved)
+   - `http://example.org/prop/statement/P42` (Wikibase age value) ≡ `hasAgeValue` (Enslaved)
+   - `http://example.org/prop/direct/P3` (Wikibase hasAgeValue) ≡ `hasAgeValue` (Enslaved)
+
+These alignment rules map the classes and properties from the Wikibase ontology to their corresponding counterparts in the Enslaved ontology, based on the provided module information.

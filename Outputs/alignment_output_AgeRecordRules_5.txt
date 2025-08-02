@@ -1,0 +1,32 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding classes and properties in both ontologies and establish the relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `ed:Q410` (Wikibase "Person") aligns with `Person` in the Enslaved ontology.
+     - **Rule:** `ed:Q410 ≡ Person`
+
+2. **Property Alignment:**
+   - `ep:P42` (Wikibase "hasAgeRecord") aligns with `hasAgeRecord` in the Enslaved ontology.
+     - **Rule:** `ep:P42 ≡ hasAgeRecord`
+   - `eps:P42` (Wikibase "age value") aligns with `hasAgeValue` in the Enslaved ontology.
+     - **Rule:** `eps:P42 ≡ hasAgeValue`
+   - `edt:P4` (Wikibase "hasAgeCategory") aligns with `hasValue` in the Enslaved ontology, specifically for `AgeCategory`.
+     - **Rule:** `edt:P4 ≡ hasValue`
+
+3. **Class Alignment:**
+   - `ed:Q424` (Wikibase "AgeRecord") aligns with `AgeRecord` in the Enslaved ontology.
+     - **Rule:** `ed:Q424 ≡ AgeRecord`
+   - `ed:Q412` (Wikibase "AgeCategory") aligns with `AgeCategory` in the Enslaved ontology.
+     - **Rule:** `ed:Q412 ≡ AgeCategory`
+
+### Explanation:
+
+- The class `ed:Q410` in Wikibase is labeled as "Person," which directly corresponds to the `Person` class in the Enslaved ontology.
+- The property `ep:P42` in Wikibase, labeled as "hasAgeRecord," is used to associate a `Person` with an `AgeRecord`, which matches the `hasAgeRecord` property in the Enslaved ontology.
+- The property `eps:P42` in Wikibase, labeled as "age value," is used to associate an `AgeRecord` with a value, which corresponds to the `hasAgeValue` property in the Enslaved ontology.
+- The property `edt:P4` in Wikibase, labeled as "hasAgeCategory," is used to associate an `AgeRecord` with an `AgeCategory`, which corresponds to the `hasValue` property in the Enslaved ontology for `AgeCategory`.
+- The class `ed:Q424` in Wikibase is labeled as "AgeRecord," which directly corresponds to the `AgeRecord` class in the Enslaved ontology.
+- The class `ed:Q412` in Wikibase is labeled as "AgeCategory," which directly corresponds to the `AgeCategory` class in the Enslaved ontology.
+
+These alignment rules establish a mapping between the Wikibase ontology and the Enslaved ontology, allowing for interoperability and data integration between the two systems.

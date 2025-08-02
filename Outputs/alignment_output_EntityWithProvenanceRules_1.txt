@@ -1,0 +1,37 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in both ontologies. The provided Wikibase triple indicates that `ed:Q67` is of type `owl:Class` and is labeled as "EntityWithProvenance". We need to find how this concept aligns with the Enslaved ontology.
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - **Wikibase Class:** `ed:Q67` (labeled as "EntityWithProvenance")
+   - **Enslaved Ontology Class:** `EntityWithProvenance`
+
+   **Alignment Rule:**  
+   `ed:Q67` ≡ `EntityWithProvenance`
+
+2. **Property Alignment:**
+   - Since `EntityWithProvenance` in the Enslaved ontology has several properties and axioms associated with it, we need to ensure that these are considered in the alignment. The properties include:
+     - `availableFrom`
+     - `hasReferenceURI`
+     - `hasLicenseInformation`
+     - `hasOriginalSourceType`
+     - `isDirectlyBasedOn`
+     - `attributedTo`
+     - `generatedBy`
+
+   **Alignment Rule:**  
+   For each property `P` associated with `EntityWithProvenance` in the Enslaved ontology, align it with the corresponding property in the Wikibase ontology if it exists. If not, document the need for a new property in Wikibase to maintain semantic consistency.
+
+3. **Axiom Alignment:**
+   - The axioms associated with `EntityWithProvenance` in the Enslaved ontology should be considered for alignment. These include existential quantifiers and domain/range restrictions.
+
+   **Alignment Rule:**  
+   Ensure that any axioms or restrictions on `EntityWithProvenance` in the Enslaved ontology are mirrored in the Wikibase ontology for `ed:Q67`. This may involve creating equivalent property restrictions or documenting the need for such restrictions in Wikibase.
+
+4. **Semantic Consistency:**
+   - Ensure that the semantic meaning of `EntityWithProvenance` is preserved across both ontologies. This involves checking that the roles and relationships defined in the Enslaved ontology are respected in the Wikibase representation.
+
+   **Alignment Rule:**  
+   Maintain semantic consistency by ensuring that any subclass or superclass relationships, as well as any role or event participation, are accurately represented in both ontologies.
+
+By following these alignment rules, we ensure that the concept of `EntityWithProvenance` is consistently represented across both the Enslaved and Wikibase ontologies, facilitating interoperability and data integration.

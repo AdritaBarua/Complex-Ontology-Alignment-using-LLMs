@@ -1,0 +1,28 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in the Enslaved ontology that match the concept described in the Wikibase triple. The Wikibase triple describes a class labeled "PersonStatus," which suggests a potential alignment with the "PersonStatusRecord" module in the Enslaved ontology.
+
+Based on the provided module information for the Enslaved ontology, the "PersonStatusRecord" is a subclass of "AgentRecord" and is associated with specific axioms. We will use these axioms to establish the alignment rules.
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Wikibase: `ed:Q375` (PersonStatus)
+   - Enslaved: `PersonStatusRecord`
+   - Rule: `ed:Q375 owl:equivalentClass PersonStatusRecord`
+
+2. **Property Alignment:**
+   - Since the Wikibase triple does not provide specific properties, we will align based on the axioms associated with `PersonStatusRecord` in the Enslaved ontology:
+     - `PersonStatusRecord ⊑ =1hasValue.PSCategories`
+     - `hasPersonStatusRecord ⊑ hasPersonRecord`
+     - `PersonStatusRecord ⊑ ∀hasStatusGeneratedEvent.Event`
+     - `∃hasStatusGeneratedEvent.Event ⊑ PersonStatusRecord`
+     - `hasStatusGeneratedEvent ⊑ refersToEvent`
+
+3. **Axiom Alignment:**
+   - Align the axioms related to `PersonStatusRecord` with potential properties in the Wikibase ontology if they exist. Since the Wikibase triple does not specify properties, this step is theoretical unless more information is provided.
+
+### Summary of Alignment:
+
+- The class `ed:Q375` in the Wikibase ontology is equivalent to the `PersonStatusRecord` class in the Enslaved ontology.
+- The properties and axioms associated with `PersonStatusRecord` in the Enslaved ontology should be considered when aligning with any additional properties in the Wikibase ontology related to `PersonStatus`.
+
+These alignment rules provide a basis for integrating the two ontologies by identifying equivalent classes and considering the axioms that define their relationships and constraints.

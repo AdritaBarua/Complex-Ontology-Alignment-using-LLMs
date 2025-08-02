@@ -1,0 +1,65 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to map the classes and properties from Wikibase to their corresponding counterparts in the Enslaved ontology. Let's analyze the provided Wikibase triples and find the alignment rules:
+
+### Wikibase Triple Analysis:
+
+1. **Wikibase Class: Person**
+   - URI: `http://example.org/entity/Q410`
+   - Label: "Person"
+
+2. **Wikibase Property: hasOccupation**
+   - URI: `http://example.org/prop/P22`
+   - Domain: `http://example.org/entity/Q410` (Person)
+   - Range: `http://wikiba.se/ontology#Statement`
+
+3. **Wikibase Class: Statement**
+   - URI: `http://wikiba.se/ontology#Statement`
+
+4. **Wikibase Property: recordedAt**
+   - URI: `http://example.org/prop/qualifier/P18`
+   - Domain: `http://wikiba.se/ontology#Statement`
+   - Range: `http://example.org/entity/Q238` (Event)
+
+5. **Wikibase Class: Event**
+   - URI: `http://example.org/entity/Q238`
+   - Label: "Event"
+
+### Enslaved Ontology Analysis:
+
+- **Person** in Enslaved is a subclass of `Agent`.
+- **OccupationRecord** is related to `Person` through the property `hasOccupationRecord`.
+- **Event** is a class in Enslaved ontology.
+- The property `recordedAt` is used in the context of `AgentRecord` and `Event`.
+
+### Alignment Rules:
+
+Based on the analysis, we can propose the following alignment rules:
+
+1. **Aligning Classes:**
+   - Wikibase `Person` (`http://example.org/entity/Q410`) aligns with Enslaved `Person`.
+   - Wikibase `Event` (`http://example.org/entity/Q238`) aligns with Enslaved `Event`.
+
+2. **Aligning Properties:**
+   - Wikibase `hasOccupation` (`http://example.org/prop/P22`) aligns with Enslaved `hasOccupationRecord`.
+   - Wikibase `recordedAt` (`http://example.org/prop/qualifier/P18`) aligns with Enslaved `recordedAt`.
+
+### Alignment Rules:
+
+```plaintext
+Alignment Rules:
+
+1. Class Alignment:
+   - Wikibase: <http://example.org/entity/Q410> (Person)
+     Enslaved: Person
+
+   - Wikibase: <http://example.org/entity/Q238> (Event)
+     Enslaved: Event
+
+2. Property Alignment:
+   - Wikibase: <http://example.org/prop/P22> (hasOccupation)
+     Enslaved: hasOccupationRecord
+
+   - Wikibase: <http://example.org/prop/qualifier/P18> (recordedAt)
+     Enslaved: recordedAt
+```
+
+These alignment rules map the relevant classes and properties from the Wikibase ontology to their counterparts in the Enslaved ontology, based on the provided module information.

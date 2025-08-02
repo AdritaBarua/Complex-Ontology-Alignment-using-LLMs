@@ -1,0 +1,21 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concept in the Enslaved ontology that matches the concept described in the Wikibase triple. The Wikibase triple describes a class labeled "Sex," which corresponds to the concept of sex or gender in the Enslaved ontology.
+
+In the Enslaved ontology, the concept of sex is represented by the `SexRecord` module. The `SexRecord` module is defined with the following axioms:
+
+1. `SexRecord ⊑ AgentRecord`
+2. `SexRecord ⊑ =1hasValue.SexTypes`
+3. `hasSexRecord ⊑ hasPersonRecord`
+
+Given this information, we can establish an alignment between the Wikibase concept "Sex" and the Enslaved ontology's `SexRecord`. The alignment rules can be expressed as follows:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Wikibase Class: `http://example.org/entity/Q291` (labeled as "Sex")
+   - Enslaved Ontology Class: `SexRecord`
+   - Alignment: `http://example.org/entity/Q291 ≡ SexRecord`
+
+2. **Property Alignment:**
+   - Since the Wikibase triple does not specify properties, we focus on the class alignment. However, if properties related to "Sex" were present in the Wikibase ontology, they would be aligned with the `hasValue` property in the `SexRecord` module, which is constrained to `SexTypes`.
+
+These alignment rules establish a correspondence between the concept of "Sex" in the Wikibase ontology and the `SexRecord` in the Enslaved ontology, allowing for semantic interoperability between the two ontologies.

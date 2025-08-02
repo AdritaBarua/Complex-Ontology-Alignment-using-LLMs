@@ -1,0 +1,17 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and relationships in both ontologies. The Wikibase triple indicates that "Q172" is a class labeled "ResearchProject." We need to find how this concept aligns with the Enslaved ontology.
+
+Based on the provided module information from the Enslaved ontology, we can see that "ResearchProject" is a subclass of "Event" and "ProvenanceActivity." Therefore, we can establish alignment rules between the Wikibase concept and the Enslaved ontology.
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - Wikibase: `ed:Q172` (ResearchProject)
+   - Enslaved: `ResearchProject`
+   - Alignment Rule: `ed:Q172 ≡ ResearchProject`
+
+2. **Subclass Alignment:**
+   - Since `ResearchProject` in the Enslaved ontology is a subclass of both `Event` and `ProvenanceActivity`, we can align these subclass relationships:
+   - Alignment Rule: `ed:Q172 ⊑ Event`
+   - Alignment Rule: `ed:Q172 ⊑ ProvenanceActivity`
+
+These alignment rules establish that the Wikibase class `ed:Q172` labeled "ResearchProject" is equivalent to the `ResearchProject` class in the Enslaved ontology and inherits its subclass relationships.

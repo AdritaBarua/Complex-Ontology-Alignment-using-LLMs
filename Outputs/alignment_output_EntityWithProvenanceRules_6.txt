@@ -1,0 +1,23 @@
+To align the given Wikibase triple with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish the relationships between them. Based on the provided information, we can derive the following alignment rules:
+
+### Alignment Rules:
+
+1. **Class Alignment:**
+   - `ed:Q67` (Wikibase) is aligned with `EntityWithProvenance` (Enslaved).
+     - **Rule:** `ed:Q67 ≡ EntityWithProvenance`
+
+2. **Property Alignment:**
+   - `ep:P23` (Wikibase) is aligned with `hasOriginalSourceType` (Enslaved).
+     - **Rule:** `ep:P23 ≡ hasOriginalSourceType`
+
+3. **Domain and Range Alignment:**
+   - The domain of `ep:P23` in Wikibase is `ed:Q67`, which aligns with `EntityWithProvenance` in Enslaved.
+     - **Rule:** `Domain(ep:P23) ≡ EntityWithProvenance`
+   - The range of `ep:P23` in Wikibase is `wikibase:Statement`, which needs to be aligned with a corresponding concept in Enslaved. Since `wikibase:Statement` is a class, we need to find a suitable class in Enslaved that represents a statement or similar concept. However, based on the provided information, there is no direct equivalent. Therefore, this part of the alignment might require further investigation or could be left as a potential area for future alignment.
+   - The range of `eps:P23` in Wikibase is `ed:Q122`, which aligns with `DocumentTypes` in Enslaved.
+     - **Rule:** `Range(eps:P23) ≡ DocumentTypes`
+
+4. **Additional Considerations:**
+   - The property `eps:P23` in Wikibase, labeled as "source type value," suggests a relationship with `DocumentTypes` in Enslaved. This aligns with the axiom in Enslaved: `EntityWithProvenance ⊑∀hasOriginalSourceType.DocumentTypes`.
+
+By establishing these alignment rules, we create a mapping between the concepts and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two systems.

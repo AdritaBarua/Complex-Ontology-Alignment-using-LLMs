@@ -1,0 +1,53 @@
+To align the given Wikibase ontology triples with the Enslaved ontology, we need to identify the corresponding concepts and properties in both ontologies and establish relationships between them. Let's analyze the provided Wikibase triples and align them with the Enslaved ontology:
+
+### Wikibase Triple Analysis:
+
+1. **Wikibase Triple 1:**
+   - `http://example.org/entity/Q410` is labeled as "Person".
+   - In the Enslaved ontology, `Person` is a subclass of `Agent`.
+
+2. **Wikibase Triple 2:**
+   - `http://example.org/prop/P31` is labeled as "hasSex".
+   - The domain is `http://example.org/entity/Q410` (Person).
+   - The range is `http://wikiba.se/ontology#Statement`.
+   - In the Enslaved ontology, `SexRecord` is related to `Person` through `hasSexRecord`, and `SexRecord` has a property `hasValue` with range `SexTypes`.
+
+3. **Wikibase Triple 3:**
+   - `http://wikiba.se/ontology#Statement` is a class.
+   - In the Enslaved ontology, `AgentRecord` is a class that can be related to `Person`.
+
+4. **Wikibase Triple 4:**
+   - `http://wikiba.se/ontology#Reference` is a class.
+   - In the Enslaved ontology, `EntityWithProvenance` has references through `hasReferenceURI`.
+
+5. **Wikibase Triple 5:**
+   - `http://example.org/prop/reference/P6` is labeled as "isDirectlyBasedOn".
+   - The domain is `http://wikiba.se/ontology#Reference`.
+   - The range is `http://example.org/entity/Q67`.
+   - In the Enslaved ontology, `EntityWithProvenance` has a property `isDirectlyBasedOn`.
+
+6. **Wikibase Triple 6:**
+   - `http://example.org/entity/Q67` is labeled as "EntityWithProvenance".
+   - This directly corresponds to `EntityWithProvenance` in the Enslaved ontology.
+
+### Alignment Rules:
+
+Based on the analysis, here are the alignment rules:
+
+1. **Person Alignment:**
+   - `http://example.org/entity/Q410` (Wikibase) ≡ `Person` (Enslaved)
+
+2. **hasSex Property Alignment:**
+   - `http://example.org/prop/P31` (Wikibase) ≡ `hasSexRecord` (Enslaved)
+   - Domain: `http://example.org/entity/Q410` (Wikibase) ≡ `Person` (Enslaved)
+   - Range: `http://wikiba.se/ontology#Statement` (Wikibase) ≡ `SexRecord` (Enslaved)
+
+3. **EntityWithProvenance Alignment:**
+   - `http://example.org/entity/Q67` (Wikibase) ≡ `EntityWithProvenance` (Enslaved)
+
+4. **isDirectlyBasedOn Property Alignment:**
+   - `http://example.org/prop/reference/P6` (Wikibase) ≡ `isDirectlyBasedOn` (Enslaved)
+   - Domain: `http://wikiba.se/ontology#Reference` (Wikibase) ≡ `EntityWithProvenance` (Enslaved)
+   - Range: `http://example.org/entity/Q67` (Wikibase) ≡ `EntityWithProvenance` (Enslaved)
+
+These alignment rules establish a mapping between the concepts and properties in the Wikibase ontology and the Enslaved ontology, facilitating interoperability and data integration between the two ontologies.
